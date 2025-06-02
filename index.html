@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Digital - Transforme seu negócio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f8fafc;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .step-card {
+            position: relative;
+        }
+        .step-card::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -15%;
+            width: 30%;
+            height: 2px;
+            background-color: #d1d5db;
+            display: none;
+        }
+        @media (min-width: 768px) {
+            .step-card:not(:last-child)::after {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <svg class="h-10 w-auto text-indigo-600" viewBox="0 0 40 40" fill="currentColor">
+                    <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z"></path>
+                </svg>
+                <span class="ml-2 text-xl font-bold text-gray-800">DigiAgência</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition-colors">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-indigo-600 transition-colors">Serviços</a>
+                <a href="#contato" class="text-gray-600 hover:text-indigo-600 transition-colors">Contato</a>
+            </nav>
+            
+            <button class="md:hidden focus:outline-none" id="menu-button">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Menu mobile -->
+        <div class="md:hidden hidden bg-white w-full py-2 shadow-inner" id="mobile-menu">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="#sobre" class="text-gray-600 hover:text-indigo-600 transition-colors py-2">Sobre</a>
+                <a href="#servicos" class="text-gray-600 hover:text-indigo-600 transition-colors py-2">Serviços</a>
+                <a href="#contato" class="text-gray-600 hover:text-indigo-600 transition-colors py-2">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="gradient-bg text-white py-20 md:py-28">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Quer levar seu negócio físico para o mundo digital?</h1>
+                <p class="text-lg md:text-xl mb-10">Criamos seu site profissional e gerenciamos sua mídia e tráfego para você vender mais online!</p>
+                <div class="flex flex-col md:flex-row justify-center gap-4">
+                    <a href="https://wa.me/5500000000000" target="_blank" class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-8 rounded-lg transition-colors flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Fale Conosco
+                    </a>
+                    <a href="#formulario" class="bg-white text-indigo-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">Quero meu site</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre a agência -->
+    <section id="sobre" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Sobre a DigiAgência</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 mb-8">
+                    Somos especialistas em transformação digital para negócios locais. Com mais de 5 anos de experiência, 
+                    já ajudamos centenas de empresas a conquistarem presença online e aumentarem suas vendas através de 
+                    estratégias personalizadas de marketing digital. Nossa equipe multidisciplinar trabalha para que seu 
+                    negócio se destaque na internet com soluções completas e resultados mensuráveis.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-indigo-600 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.672 1.911a1 1 0 10-1.932.518l.259.966a1 1 0 001.932-.518l-.26-.966zM2.429 4.74a1 1 0 10-.517 1.932l.966.259a1 1 0 00.517-1.932l-.966-.26zm8.814-.569a1 1 0 00-1.415-1.414l-.707.707a1 1 0 101.415 1.415l.707-.708zm-7.071 7.072l.707-.707A1 1 0 003.465 9.12l-.708.707a1 1 0 001.415 1.415zm3.2-5.171a1 1 0 00-1.3 1.3l4 10a1 1 0 001.823.075l1.38-2.759 3.018 3.02a1 1 0 001.414-1.415l-3.019-3.02 2.76-1.379a1 1 0 00-.076-1.822l-10-4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Experiência</h3>
+                        <p class="text-gray-600">Mais de 5 anos transformando negócios físicos em digitais</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-indigo-600 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v1h8v-1zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-1a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v1h-3zM4.75 12.094A5.973 5.973 0 004 15v1H1v-1a3 3 0 013.75-2.906z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Equipe</h3>
+                        <p class="text-gray-600">Profissionais especializados em design, desenvolvimento e marketing</p>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <div class="text-indigo-600 mb-4">
+                            <svg class="w-12 h-12 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Agilidade</h3>
+                        <p class="text-gray-600">Seu projeto pronto em tempo recorde com qualidade premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Nossos Serviços</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">Soluções completas para sua presença digital</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition-all duration-300">
+                    <div class="p-1 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Criação de Site Profissional</h3>
+                        <p class="text-gray-600 mb-6">Sites responsivos, otimizados para SEO e com design personalizado para qualquer nicho de mercado.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Design responsivo
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Otimizado para SEO
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Integração com redes sociais
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition-all duration-300">
+                    <div class="p-1 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Gestão de Mídia Social</h3>
+                        <p class="text-gray-600 mb-6">Estratégias de conteúdo e gerenciamento completo das suas redes sociais para engajar seu público.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Criação de conteúdo
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Calendário editorial
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Relatórios de desempenho
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md overflow-hidden service-card transition-all duration-300">
+                    <div class="p-1 bg-gradient-to-r from-indigo-500 to-purple-600"></div>
+                    <div class="p-8">
+                        <div class="w-16 h-16 bg-indigo-100 rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3 text-gray-800">Gestão de Tráfego Pago</h3>
+                        <p class="text-gray-600 mb-6">Campanhas otimizadas no Google Ads e Facebook Ads para atrair clientes qualificados.</p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Google Ads
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Facebook & Instagram Ads
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Remarketing estratégico
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como funciona -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Como Funciona</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600">Processo simples e eficiente para transformar seu negócio</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="step-card bg-white rounded-xl shadow-md p-8 text-center relative">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">1</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Preencha o formulário</h3>
+                    <p class="text-gray-600">Conte-nos sobre seu negócio e suas necessidades para começarmos a planejar seu projeto.</p>
+                </div>
+                
+                <div class="step-card bg-white rounded-xl shadow-md p-8 text-center relative">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">2</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Agende sua reunião</h3>
+                    <p class="text-gray-600">Conversaremos para personalizar o projeto de acordo com seus objetivos e expectativas.</p>
+                </div>
+                
+                <div class="step-card bg-white rounded-xl shadow-md p-8 text-center relative">
+                    <div class="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6">3</div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Comece a vender mais!</h3>
+                    <p class="text-gray-600">Receba seu site e estratégia digital completa para impulsionar seu negócio online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de contato -->
+    <section id="formulario" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 gradient-bg p-8 text-white">
+                        <h2 class="text-2xl font-bold mb-6">Quero meu site + gestão de mídia e tráfego</h2>
+                        <p class="mb-8">Olá! Obrigado pelo interesse. Para começarmos, por favor, responda essas perguntas básicas para entender seu negócio e suas necessidades.</p>
+                        <div class="mb-8">
+                            <h3 class="font-semibold mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Atendimento personalizado
+                            </h3>
+                            <p class="ml-7">Entendemos seu negócio e criamos soluções sob medida.</p>
+                        </div>
+                        <div class="mb-8">
+                            <h3 class="font-semibold mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Resultados mensuráveis
+                            </h3>
+                            <p class="ml-7">Acompanhe o crescimento do seu negócio com relatórios detalhados.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                Suporte contínuo
+                            </h3>
+                            <p class="ml-7">Estamos sempre disponíveis para ajudar no que for preciso.</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-xl font-semibold mb-6 text-gray-800">Preencha o formulário</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="name">Nome completo</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="email">E-mail</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="phone">Telefone / WhatsApp</label>
+                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="business">Nome do seu negócio</label>
+                                <input type="text" id="business" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="niche">Qual o ramo / nicho do seu negócio?</label>
+                                <input type="text" id="niche" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Você já tem um site?</label>
+                                <div class="flex space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="has_site" value="yes" class="mr-2 text-indigo-600">
+                                        Sim
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="has_site" value="no" class="mr-2 text-indigo-600">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="social">Você já usa redes sociais para o seu negócio? Quais?</label>
+                                <textarea id="social" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Você já fez anúncios pagos antes?</label>
+                                <div class="flex space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="has_ads" value="yes" class="mr-2 text-indigo-600">
+                                        Sim
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="has_ads" value="no" class="mr-2 text-indigo-600">
+                                        Não
+                                    </label>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1" for="goal">Qual seu principal objetivo com a criação do site e gestão de mídia?</label>
+                                <textarea id="goal" rows="2" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Quer agendar uma reunião para conversarmos melhor?</label>
+                                <div class="flex space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="meeting" value="yes" class="mr-2 text-indigo-600">
+                                        Sim, quero agendar
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="meeting" value="no" class="mr-2 text-indigo-600">
+                                        Prefiro contato por WhatsApp primeiro
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-md transition-colors">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agendamento de reunião -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold mb-6 text-gray-800">Agende uma Reunião</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-600 mb-8">Escolha o melhor horário para conversarmos sobre seu projeto</p>
+                <a href="https://calendly.com" target="_blank" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-lg transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path>
+                    </svg>
+                    Agendar agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <svg class="h-8 w-auto text-indigo-400" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 3.33331C10.8 3.33331 3.33337 10.8 3.33337 20C3.33337 29.2 10.8 36.6666 20 36.6666C29.2 36.6666 36.6667 29.2 36.6667 20C36.6667 10.8 29.2 3.33331 20 3.33331ZM16.6667 28.3333L8.33337 20L10.6834 17.65L16.6667 23.6166L29.3167 10.9666L31.6667 13.3333L16.6667 28.3333Z"></path>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">DigiAgência</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Transformando negócios físicos em digitais com estratégias personalizadas e resultados mensuráveis.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#sobre" class="text-gray-400 hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#servicos" class="text-gray-400 hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#formulario" class="text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contato</h3>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/5500000000000" target="_blank" class="flex items-center text-gray-400 hover:text-white transition-colors">
+                            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            WhatsApp Business
+                        </a>
+                        <div class="flex space-x-4 pt-2">
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 DigiAgência. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Enviando...';
+            
+            setTimeout(function() {
+                const form = document.getElementById('contact-form');
+                form.innerHTML = `
+                    <div class="text-center py-8">
+                        <svg class="w-16 h-16 text-green-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Formulário enviado com sucesso!</h3>
+                        <p class="text-gray-600 mb-6">Entraremos em contato em breve para dar continuidade ao seu projeto.</p>
+                        <a href="#" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-6 rounded-md transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.707-10.293a1 1 0 00-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L9.414 11H13a1 1 0 100-2H9.414l1.293-1.293z" clip-rule="evenodd"></path>
+                            </svg>
+                            Voltar ao início
+                        </a>
+                    </div>
+                `;
+            }, 2000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9499246e77d45228',t:'MTc0ODg5MDI4OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
